@@ -1,0 +1,29 @@
+model,added_features,CV_score,Kaggle_score,goal,description
+decision tree, base,0.434923,0.53149,count, baseline
+light gbm, base,0.305781,0.40615,count, baseline
+random forest, base,0.333181,0.43434,count, baseline
+catboost,base,0.303165,0.40156,count, baseline
+xgboost, base,0.312227,0.40043,count, baseline
+
+xgboost, base;fev1, 0.310478,0.39935, count, fev1
+catboost, base;fev1, 0.309859,0.39314, count, fev1
+lightgbm, base;fev1, 0.313522,0.39849, count, fev1
+
+xgboost, base;fev1;fev2, 0.313265, 0.39918,count, fev2
+catboost,base;fev1;fev2,0.307022,0.38814, count, fev2
+lightgbm,base;fev1;fev2, 0.309494,0.40040,count, fev2
+
+catboost, fev2, 0.308389, 0.37982, count, category
+xgboost, fev2,0.313502,0.41396,count,category
+lightgbm, fev2,0.309774,0.40600,count, category
+
+catboost, fev2, 0.308138, 0.38672, count, wind_fix 
+xgb, fev2, 0.312650, 0.40417, count, wind_fix
+lgb, fev2, 0.313037, 0.40556, count, wind_fix
+
+catboost, fev2, 0.310034, 0.38556, reg + cas, div
+
+
+base = hour;month;weekday;year
+fev1 = is_weekend;is_night;morning_rush;evening_rush;hour_workingday;
+fev2 = fev1;sin;cos;temp_atemp_diff;discomfort_index
